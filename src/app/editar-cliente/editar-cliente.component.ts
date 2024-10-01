@@ -22,13 +22,12 @@ export class EditarClienteComponent implements OnInit {
   ngOnInit() {
     this.idCliente = this.route.snapshot.params['idCliente'];
     if (this.idCliente) {
-      // Fetch the client details for editing
       this.clienteService.obtenerCliente(this.idCliente).subscribe({
         next: (data) => {
           this.cliente = data;
         },
         error: (err) => {
-          console.error('Error fetching client:', err);
+          console.error('Error al obtener el cliente:', err);
         }
       });
     }
@@ -36,23 +35,22 @@ export class EditarClienteComponent implements OnInit {
 
   onSubmit() {
     if (this.cliente.id) {
-      // Update existing client
       this.clienteService.actualizarCliente(this.cliente).subscribe({
         next: () => {
-          this.router.navigate(['/clientes']); // Navigate back to the list of clients
+          this.router.navigate(['/clientes']); 
         },
         error: (err) => {
-          console.error('Error updating client:', err);
+          console.error('Error al actualizar el cliente:', err);
         }
       });
     } else {
       // Add a new client
       this.clienteService.agregarCliente(this.cliente).subscribe({
         next: () => {
-          this.router.navigate(['/clientes']); // Navigate back to the list of clients
+          this.router.navigate(['/clientes']); 
         },
         error: (err) => {
-          console.error('Error adding client:', err);
+          console.error('Error al agregar el cliente:', err);
         }
       });
     }

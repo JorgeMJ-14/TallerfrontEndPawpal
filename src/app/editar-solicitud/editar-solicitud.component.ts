@@ -21,13 +21,13 @@ export class EditarSolicitudComponent implements OnInit {
   ngOnInit() {
     this.idSolicitud = this.route.snapshot.params['idSolicitud'];
     if (this.idSolicitud) {
-      const id = Number(this.idSolicitud); // Convertir a number
+      const id = Number(this.idSolicitud); 
       this.solicitudService.buscarSolicitudId(id).subscribe({
         next: (data) => {
           this.solicitud = data;
         },
         error: (err) => {
-          console.error('Error fetching solicitud:', err);
+          console.error('Error al obtener solicitudes:', err);
         }
       });
     }
@@ -35,23 +35,21 @@ export class EditarSolicitudComponent implements OnInit {
 
   onSubmit() {
     if (this.solicitud.id) {
-      // Update existing request
       this.solicitudService.actualizarSolicitud(this.solicitud.id, this.solicitud).subscribe({
         next: () => {
-          this.router.navigate(['/solicitudes']); // Navigate back to the list of requests
+          this.router.navigate(['/solicitudes']); 
         },
         error: (err) => {
           console.error('Error updating request:', err);
         }
       });
     } else {
-      // Add a new request (opcional)
       this.solicitudService.crearSolicitud(this.solicitud).subscribe({
         next: () => {
-          this.router.navigate(['/solicitudes']); // Navigate back to the list of requests
+          this.router.navigate(['/solicitudes']); 
         },
         error: (err) => {
-          console.error('Error adding request:', err);
+          console.error('Error al actualizar la solicitud:', err);
         }
       });
     }

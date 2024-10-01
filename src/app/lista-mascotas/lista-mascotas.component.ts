@@ -9,8 +9,8 @@ import { MascotaService } from '../shared/mascota.service';
   styleUrl: './lista-mascotas.component.css'
 })
 export class ListaMascotasComponent implements OnInit {
-  mascotas: MascotaModel[] = [];  // Cambia a un array de Mascotas
-  mostrarEstado: { [key: string]: boolean } = {};  // Clave: ID de la mascota, Valor: estado 'mostrar'
+  mascotas: MascotaModel[] = [];  
+  mostrarEstado: { [key: string]: boolean } = {};  
 
   constructor(private mascotaService: MascotaService) {}
 

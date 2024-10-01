@@ -9,6 +9,7 @@ import { EditarSolicitudComponent } from './editar-solicitud/editar-solicitud.co
 
 
 const routes: Routes = [
+  // Rutas para Mascotas
   { path: 'mascotas', component: ListaMascotasComponent },
   { path: 'mascotas/editar/:idMascota', component: EditarMascotasComponent },
   { path: 'mascotas/agregar', component: EditarMascotasComponent },

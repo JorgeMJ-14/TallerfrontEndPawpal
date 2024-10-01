@@ -9,7 +9,7 @@ import { ClienteService } from '../shared/cliente.service';
 })
 export class ListaClienteComponent implements OnInit {
   clientes: ClienteModel[] = []; // Cambia a un array de Clientes
-  mostrarEstado: { [key: string]: boolean } = {}; // Clave: ID del cliente, Valor: estado 'mostrar'
+  mostrarEstado: { [key: string]: boolean } = {}; 
 
   constructor(private clienteService: ClienteService) {}
 

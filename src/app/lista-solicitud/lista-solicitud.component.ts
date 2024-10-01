@@ -13,8 +13,8 @@ import { ClienteModel } from '../shared/cliente.model';
 })
 export class ListaSolicitudComponent implements OnInit {
   solicitudes: SolicitudModel[] = [];
-  clientes: ClienteModel[] = []; // Cambia a ClienteModel
-  mascotas: MascotaModel[] = []; // Cambia a MascotaModel
+  clientes: ClienteModel[] = []; 
+  mascotas: MascotaModel[] = []; 
 
   constructor(
     private solicitudService: SolicitudService,
@@ -38,7 +38,7 @@ export class ListaSolicitudComponent implements OnInit {
   }
 
   obtenerClientes(): void {
-    this.clienteService.obtenerClientes().subscribe(clientes => { // Cambia a obtenerClientes()
+    this.clienteService.obtenerClientes().subscribe(clientes => { 
       console.log('Clientes obtenidos:', clientes);
       this.clientes = clientes;
       this.asignarNombres(); // Asigna nombres si los clientes están disponibles
