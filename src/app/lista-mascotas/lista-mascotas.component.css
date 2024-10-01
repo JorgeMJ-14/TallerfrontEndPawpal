@@ -1,0 +1,35 @@
+.mascota-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px; /* Ajusta el padding para reducir el tamaño */
+    margin: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+    width: 300px; /* Puedes ajustar el ancho según sea necesario */
+    display: inline-block; /* Para que las tarjetas se alineen horizontalmente */
+    vertical-align: top; /* Alinea la parte superior de las tarjetas */
+  }
+  
+  .mascota-imagen img {
+    max-width: 100%; /* Mantiene la imagen dentro de la tarjeta */
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .mascota-info {
+    margin-top: 10px;
+  }
+  
+  .mascota-detalles {
+    margin-top: 10px;
+    text-align: left; /* Cambia a left para mejor visualización */
+  }
+  
+  .mascota-acciones {
+    margin-top: 10px;
+  }
+  
+  .btn {
+    margin: 5px;
+  }
+  

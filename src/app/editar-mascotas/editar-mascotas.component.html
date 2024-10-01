@@ -1,0 +1,86 @@
+<div class="container mt-5">
+  <h2 class="mb-4 text-center">Formulario de Mascotas</h2>
+  <form (ngSubmit)="onSubmit()" #mascotaForm="ngForm" class="bg-light p-4 rounded shadow">
+    <fieldset class="form-group">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" required [(ngModel)]="mascota.nombre" name="nombre" placeholder="Ingresa el nombre">
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <div class="mb-3">
+        <label for="especie" class="form-label">Especie</label>
+        <input type="text" class="form-control" required [(ngModel)]="mascota.especie" name="especie" placeholder="Ingresa la especie">
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <div class="mb-3">
+        <label for="raza" class="form-label">Raza</label>
+        <input type="text" class="form-control" [(ngModel)]="mascota.raza" name="raza" placeholder="Ingresa la raza">
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <div class="mb-3">
+        <label for="edad" class="form-label">Edad</label>
+        <input type="number" class="form-control" required [(ngModel)]="mascota.edad" name="edad" placeholder="Ingresa la edad">
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <div class="mb-3">
+        <label for="sexo" class="form-label">Sexo</label>
+        <select class="form-select" required [(ngModel)]="mascota.sexo" name="sexo">
+          <option value="" disabled selected>Selecciona el sexo</option>
+          <option value="Macho">Macho</option>
+          <option value="Hembra">Hembra</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <div class="mb-3">
+        <label for="color" class="form-label">Color</label>
+        <input type="text" class="form-control" [(ngModel)]="mascota.color" name="color" placeholder="Ingresa el color">
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea class="form-control" [(ngModel)]="mascota.descripcion" name="descripcion" rows="3" placeholder="Ingresa una descripción"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <div class="mb-3">
+        <label for="estado" class="form-label">Estado</label>
+        <select class="form-select" [(ngModel)]="mascota.estado" name="estado">
+          <option value="" disabled selected>Selecciona el estado</option>
+          <option value="Disponible">Disponible</option>
+          <option value="Adoptado">Adoptado</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <div class="mb-3">
+        <label for="fecha_ingreso" class="form-label">Fecha de Ingreso</label>
+        <input type="date" class="form-control" [(ngModel)]="mascota.fecha_ingreso" name="fecha_ingreso">
+      </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+      <div class="mb-3">
+        <label for="foto" class="form-label">URL de la Foto</label>
+        <input type="text" class="form-control" [(ngModel)]="mascota.foto" name="foto" placeholder="Ingresa la URL de la foto">
+      </div>
+    </fieldset>
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary" [disabled]="!mascotaForm.valid">Enviar</button>
+    </div>
+  </form>
+</div>

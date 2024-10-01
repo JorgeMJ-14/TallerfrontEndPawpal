@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <h2>{{ solicitud.id ? 'Editar Solicitud' : 'Nueva Solicitud' }}</h2>
+    <form (ngSubmit)="onSubmit()" #solicitudForm="ngForm">
+      <div class="form-group">
+        <label for="estado">Estado</label>
+        <select class="form-control" id="estado" [(ngModel)]="solicitud.estado" name="estado" required>
+          <option value="Pendiente">Pendiente</option>
+          <option value="Aprobada">Aprobada</option>
+          <option value="Rechazada">Rechazada</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="clienteId">ID del Cliente</label>
+        <input type="text" class="form-control" id="clienteId" [(ngModel)]="solicitud.clienteId" name="clienteId" required>
+      </div>
+      <div class="form-group">
+        <label for="mascotaId">ID de la Mascota</label>
+        <input type="text" class="form-control" id="mascotaId" [(ngModel)]="solicitud.mascotaId" name="mascotaId" required>
+      </div>
+      <div class="form-group">
+        <label for="fecha_solicitud">Fecha de Solicitud</label>
+        <input type="date" class="form-control" id="fecha_solicitud" [(ngModel)]="solicitud.fecha_solicitud" name="fecha_solicitud" required>
+      </div>
+      <div class="d-flex justify-content-between mt-4">
+        <button type="submit" class="btn btn-primary" [disabled]="!solicitudForm.valid">Guardar Solicitud</button>
+        <a class="btn btn-secondary" [routerLink]="['/solicitudes']">Cancelar</a>
+      </div>
+    </form>
+  </div>
+  
