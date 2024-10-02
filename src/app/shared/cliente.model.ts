@@ -5,6 +5,6 @@ export class ClienteModel {
         public direccion: string,
         public telefono?: string,
         public email?: string,
-        // Add any other properties as needed
+        
     ) {}
 }
