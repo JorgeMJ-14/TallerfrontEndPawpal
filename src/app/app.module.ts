@@ -14,6 +14,7 @@ import { ListaSolicitudComponent } from './lista-solicitud/lista-solicitud.compo
 import { EditarSolicitudComponent } from './editar-solicitud/editar-solicitud.component';
 
 
+
 @NgModule({
 
   declarations: [
